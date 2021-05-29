@@ -9,17 +9,16 @@ import io.cucumber.datatable.DataTable;
 import pages.locators.CreateAccountPageLoactors;
 import utils.SeleniumDriver;
 
-public class CreatAccountPageActions {
+public class CreateAccountPageActions {
 
 	CreateAccountPageLoactors createAccountPageLoactors = new CreateAccountPageLoactors();
 	
-	public CreatAccountPageActions() {
+	public CreateAccountPageActions() {
 		this.createAccountPageLoactors = new CreateAccountPageLoactors();
 		PageFactory.initElements(SeleniumDriver.getDriver(), createAccountPageLoactors);
 	}
 	
 	public void enterDetails(DataTable dataTable) {
-//|title|firstName|lastName|password|dob|address|city|state|zipCode|mobile|alias|
 			String title = dataTable.cell(1, 0);
 			if ( title == "Mr"){
 				createAccountPageLoactors.title1.click();

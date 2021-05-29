@@ -8,7 +8,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.actions.CreatAccountPageActions;
+import pages.actions.CreateAccountPageActions;
 import pages.actions.HomePageActions;
 import pages.actions.LoginPageActions;
 import utils.SeleniumDriver;
@@ -16,7 +16,7 @@ import utils.SeleniumDriver;
 public class LoginSteps extends SeleniumDriver {
 
 	LoginPageActions loginPageActions = new LoginPageActions();
-	CreatAccountPageActions creatAccountPageActions = new CreatAccountPageActions();
+	CreateAccountPageActions creatAccountPageActions = new CreateAccountPageActions();
 	HomePageActions homePageActions = new HomePageActions();
 
 	@Given("user navigates to the website <URL> and clicks sign in")
