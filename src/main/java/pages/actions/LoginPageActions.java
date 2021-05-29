@@ -19,9 +19,13 @@ public class LoginPageActions {
 	}
 	
 	public void createAccount(String email) {
-		((JavascriptExecutor) SeleniumDriver.getDriver()).executeScript("window.scrollTo(0, document.body.scrollHeight/2)");
-		SeleniumDriver.getWaitDriver().until(ExpectedConditions.elementToBeClickable(loginPageLocators.createAccountEmail));
-		loginPageLocators.createAccountEmail.sendKeys(email);
+		if(email==null) {
+			//no action performed directly clicking register
+		}
+		else {
+			SeleniumDriver.getWaitDriver().until(ExpectedConditions.elementToBeClickable(loginPageLocators.createAccountEmail));
+			loginPageLocators.createAccountEmail.sendKeys(email);
+		}
 	}
 	
 	public void clickCreateAccount() {
@@ -38,7 +42,6 @@ public class LoginPageActions {
 			message="";
 		}
 		else if(email==null && password==null) {
-			//no action performed
 			message="blankEmailandPassword";
 		}
 		else if(email==null) {

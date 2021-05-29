@@ -61,6 +61,7 @@ public class LoginSteps extends SeleniumDriver {
 
 	@When("the New user logs in using invalid Email address as <email>")
 	public void the_new_user_logs_in_using_invalid_email_address_as_email(DataTable dataTable) {
+		((JavascriptExecutor) SeleniumDriver.getDriver()).executeScript("window.scrollTo(0, document.body.scrollHeight/2)");
 		for(int i=1; i<dataTable.height();i++) {
 			loginPageActions.createAccount(dataTable.cell(i, 0));
 			SeleniumDriver.takeScreenshot();

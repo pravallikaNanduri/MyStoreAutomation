@@ -21,6 +21,7 @@ Feature: Login to My Store page
 		When the New user logs in using invalid Email address as <email>
 			|Tester.1@email|
 			|Tester.com|
+			||
 		And the user clicks Create an account button
 		Then error must be displayed
 		
