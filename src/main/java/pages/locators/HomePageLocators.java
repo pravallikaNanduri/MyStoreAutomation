@@ -8,4 +8,5 @@ public class HomePageLocators {
 	
 	@FindBy(how=How.CLASS_NAME,using="login")
 	public WebElement signInButton;
+
 }

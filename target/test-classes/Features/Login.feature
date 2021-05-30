@@ -17,7 +17,7 @@ Feature: Login to My Store page
 	@New-user-invalid
 	Scenario: Login Functionality for a User
 		Given user navigates to the website <URL> and clicks sign in
-			|http://automationpractice.com/index.php|
+			|http://automationpractice.com/index.php|Chrome|
 		When the New user logs in using invalid Email address as <email>
 			|Tester.1@email|
 			|Tester.com|
@@ -28,7 +28,7 @@ Feature: Login to My Store page
 	@New-user-invalid
 	Scenario: Login Functionality for a User
 		Given user navigates to the website <URL> and clicks sign in
-			|http://automationpractice.com/index.php|
+			|http://automationpractice.com/index.php|Chrome|
 		When the New user logs in using invalid Email address as <email>
 			|Tester.1@email|
 		And the user clicks Create an account button
@@ -37,7 +37,7 @@ Feature: Login to My Store page
 	@existing-user
 	Scenario: Login Functionality for a User
 		Given user navigates to the website <URL> and clicks sign in
-			|http://automationpractice.com/index.php|
+			|http://automationpractice.com/index.php|Chrome|
 		When there Existing user logs in using Email address as <email> and Password as <password>
 			|email| password|
 	    |Tester.4@gmail.com|1234?|
@@ -47,11 +47,20 @@ Feature: Login to My Store page
 	@existing-user-invalid
 	Scenario: Login Functionality for a User
 		Given user navigates to the website <URL> and clicks sign in
-			|http://automationpractice.com/index.php|
+			|http://automationpractice.com/index.php|Chrome|
 		When the Existing user logs in using invalid Email address as <email> and invalid Password as <password>
       |Tester.2@gmail.com|invalid|
       |Tester.3@email.com| |
       ||1234|
       | | |
 		Then login must be unsuccessful an appropriate error should be dispayed.
+		
+	@forgot-password
+	Scenario: Login Functionality for a User
+		Given user navigates to the website <URL> and clicks sign in
+			|http://automationpractice.com/index.php|Chrome|
+		When the Existing user logs in using valid Email address as <email>
+      |Tester.4@gmail.com|
+    And clicks forgot password
+		Then user should be redirected to forgot you password page
       

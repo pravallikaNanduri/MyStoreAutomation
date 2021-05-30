@@ -80,4 +80,9 @@ public class LoginPageActions {
 		}
 		
 	}
+	
+	public void clickForgotPassword() {
+		SeleniumDriver.getWaitDriver().until(ExpectedConditions.elementToBeClickable(loginPageLocators.forgotPassword));
+		loginPageLocators.forgotPassword.click();
+	}
 }

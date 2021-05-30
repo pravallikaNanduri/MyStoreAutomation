@@ -26,5 +26,7 @@ public class LoginPageLocators {
 	
 	@FindBy(how=How.XPATH,using="//div[@id='create_account_error']/ol/li")
 	public WebElement errorMessageCreateAcct;
-	
+
+	@FindBy(how=How.LINK_TEXT,using="Forgot your password?")
+	public WebElement forgotPassword;
 }

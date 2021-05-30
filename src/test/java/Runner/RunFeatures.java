@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = "classpath:/Features/Login.feature",
         glue = {"StepDefinitions"},
-        tags = "@New-user-invalid",
+        tags = "@existing-user",
         plugin = { "pretty", "html:target/cucumber-reports.html" }
         )
 

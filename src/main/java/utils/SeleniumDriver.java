@@ -2,7 +2,6 @@ package utils;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.time.Duration;
 import java.util.Date;
 
@@ -20,10 +19,11 @@ public class SeleniumDriver {
 	private static WebDriver driver;
 	private static WebDriverWait waitDriver;
 	
-	public final static Duration TIMEOUT = Duration.ofSeconds(10);
+	public final static Duration TIMEOUT = Duration.ofSeconds(20);
 	public final static Duration PAGE_LOAD_TIMEOUT = Duration.ofSeconds(10);
 	
 	public SeleniumDriver() {
+		
 		WebDriverManager.chromedriver().setup();
 		
 		driver = new ChromeDriver();
@@ -37,6 +37,7 @@ public class SeleniumDriver {
 	public static void setWaitDriver() {
 		SeleniumDriver.waitDriver = new WebDriverWait(driver, TIMEOUT);
 	}
+	
 	public static void openPage(String url) {
 		
 		driver.get(url);
